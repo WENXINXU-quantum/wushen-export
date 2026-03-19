@@ -5,75 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reflow Oven Maintenance Solutions | SMT Specialist</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
-        header { background: #004a99; color: white; padding: 2rem; text-align: center; }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .product-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #f9f9f9; }
-        h2 { color: #004a99; border-bottom: 2px solid #004a99; padding-bottom: 5px; }
-        .feature-list { list-style: none; padding: 0; }
+        /* 基础样式 */
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background: #fff; }
+        header { background: #004a99; color: white; padding: 3rem 1rem; text-align: center; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        
+        /* 产品网格布局 */
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+            margin-top: 40px; 
+        }
+
+        /* 产品卡片：使用 flex 让内容上下撑满，保证高度对齐 */
+        .product-card { 
+            display: flex; 
+            flex-direction: column; 
+            border: 1px solid #eee; 
+            padding: 20px; 
+            border-radius: 8px; 
+            background: #fdfdfd; 
+            transition: shadow 0.3s;
+        }
+        .product-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+        /* 图片比例控制核心代码 */
+        .product-image-wrapper {
+            width: 100%;
+            height: 220px; /* 统一高度 */
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            background-color: #f0f0f0;
+        }
+        .product-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 强制填充不缩放变形 */
+            object-position: center;
+        }
+
+        h2 { color: #004a99; font-size: 1.4rem; margin-top: 0; }
+        .feature-list { list-style: none; padding: 0; margin-bottom: 20px; flex-grow: 1; /* 关键：撑开中间空白让底部对齐 */ }
+        .feature-list li { margin-bottom: 8px; font-size: 0.95rem; }
         .feature-list li::before { content: "✓ "; color: #28a745; font-weight: bold; }
-        .contact-box { background: #eee; padding: 30px; margin-top: 50px; text-align: center; border-radius: 8px; }
-        .cta-button { background: #d9534f; color: white; padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 15px; }
-        footer { text-align: center; padding: 20px; font-size: 0.9em; color: #666; }
+
+        /* 联系区域 */
+        .contact-box { background: #004a99; color: white; padding: 40px; margin-top: 60px; text-align: center; border-radius: 8px; }
+        .cta-button { background: #d9534f; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin: 20px 0; }
+        .cta-button:hover { background: #c9302c; }
+        
+        footer { text-align: center; padding: 30px; font-size: 0.85em; color: #888; border-top: 1px solid #eee; margin-top: 40px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Reflow Oven Maintenance Solutions</h1>
-    <p>OEM-Grade Consumables & Parts for BTU Reflow Ovens [cite: 2]</p>
+    <p>OEM-Grade Consumables & Parts Designed for BTU Reflow Ovens [cite: 2, 4]</p>
 </header>
 
 <div class="container">
-    <section>
-        <p><strong>Shanghai Wushen Engineering Co., Ltd.</strong> is the official supplier for BTU China[cite: 30, 35]. We provide OEM-verified fits developed based on BTU specifications[cite: 5, 6].</p>
-    </section>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <p><strong>Shanghai Wushen Engineering Co., Ltd.</strong> [cite: 35]</p>
+        <p>Official OEM supplier for BTU China, providing verified fit components. [cite: 5, 30]</p>
+    </div>
 
-<div class="product-grid">
+    <div class="product-grid">
         <div class="product-card">
             <h2>01 Silicone Sealing Gasket</h2>
-            <img src="product1.jpg" alt="Silicone Gasket" style="width:100%; border-radius: 4px; margin-bottom: 15px;">
-            <p>Designed for BTU Chamber Overhauls & Periodic Maintenance[cite: 4].</p>
+            <div class="product-image-wrapper">
+                <img src="product1.jpg" alt="BTU Silicone Sealing Gasket">
+            </div>
             <ul class="feature-list">
-                <li>High-Temp Adhesive (3M 467MP/468MP), stable above 260°C [cite: 8]</li>
-                <li>Excellent compression recovery, prevents heat loss [cite: 10]</li>
-                <li>Low outgassing, RoHS/REACH certified [cite: 12]</li>
+                <li>3M 467MP/468MP High-temp adhesive [cite: 8]</li>
+                <li>Stable above 260°C with excellent recovery [cite: 8, 10]</li>
+                <li>Low outgassing & RoHS/REACH certified [cite: 12]</li>
             </ul>
         </div>
 
         <div class="product-card">
             <h2>02 High-Temp RTV Sealant</h2>
-            <img src="product2.jpg" alt="RTV Sealant" style="width:100%; border-radius: 4px; margin-bottom: 15px;">
-            <p>Universal repair solution for BTU systems (KB5920)[cite: 14, 15].</p>
+            <div class="product-image-wrapper">
+                <img src="product2.jpg" alt="KB5920 RTV Silicone">
+            </div>
             <ul class="feature-list">
-                <li>Extreme Heat Resistance up to 370°C [cite: 18]</li>
-                <li>Electronics-safe, non-corrosive formula [cite: 20]</li>
-                <li>Field-proven in BTU equipment maintenance across China [cite: 21, 22]</li>
+                <li>Universal repair solution (KB5920) [cite: 14, 15]</li>
+                <li>Heat resistance up to 370°C [cite: 18]</li>
+                <li>Non-corrosive & electronics-safe [cite: 20]</li>
             </ul>
         </div>
 
         <div class="product-card">
-            <h2>03 BTU-Compatible Heat Exchanger</h2>
-            <img src="product3.jpg" alt="Heat Exchanger" style="width:100%; border-radius: 4px; margin-bottom: 15px;">
-            <p>Critical component for thermal efficiency & system stability[cite: 23].</p>
+            <h2>03 BTU Heat Exchanger</h2>
+            <div class="product-image-wrapper">
+                <img src="product3.jpg" alt="BTU Heat Exchanger">
+            </div>
             <ul class="feature-list">
-                <li>OEM-Level Manufacturing based on BTU specifications [cite: 24, 25]</li>
-                <li>Optimized heat transfer for stable thermal profiles [cite: 27]</li>
-                <li>Please provide your BTU model for exact quotation [cite: 28]</li>
+                <li>OEM-level manufacturing for thermal efficiency [cite: 23, 24]</li>
+                <li>Optimized for stable thermal profiles [cite: 27]</li>
+                <li>Available for all BTU oven models [cite: 28]</li>
             </ul>
         </div>
     </div>
 
-
     <div class="contact-box">
-        <h3>Logistics & Support</h3>
-        <p>DDP Vietnam: Customs-cleared & ready to ship[cite: 31, 32].</p>
-        <a href="mailto:sales@wushen-export.com" class="cta-button">REQUEST A FREE SAMPLE FOR TESTING [cite: 34]</a>
-        <div style="margin-top: 20px;">
-            <p><strong>Contact:</strong> XU Wenxin [cite: 36]</p>
-            <p><strong>Zalo:</strong> +86 13816069594 [cite: 36] | <strong>Email:</strong> sales@wushen-export.com [cite: 36]</p>
-        </div>
+        <h3>Logistics & Inquiries</h3>
+        <p><strong>DDP Vietnam:</strong> Customs-cleared & direct delivery available. [cite: 31, 32]</p>
+        <a href="mailto:sales@wushen-export.com" class="cta-button">REQUEST FREE SAMPLE FOR TESTING [cite: 34]</a>
+        <p>Contact: XU Wenxin | Zalo: +86 13816069594 [cite: 36]</p>
     </div>
 </div>
 
